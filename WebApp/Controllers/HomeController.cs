@@ -7,7 +7,15 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
         public IActionResult Index()
+
         {
+            //uso  de viewData
+            ViewData["Id"] = "2";
+            ViewData["Marca"] = "Epson";
+            ViewData["Modelo"] = "Xlight";
+            ViewData["NumeroDeSerie"] = "123456";
+            ViewData["Situacion"] = "Bueno";
+            ViewData["FechaDeAlta"] = DateTime.Now.ToString("f");
             return View();
         }
 

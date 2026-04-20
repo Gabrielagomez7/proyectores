@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container">
+  <div class="text-start">
+    <h1 class="display-4">Informacion de proyectores</h1>
+    <h2 class="display-6">Proyector # @ViewData["Id"]</h2>
+        <p>Marca:@ViewBag["Marca"]</p>
+        <p>Modelo: @ViewBag["Modelo"]</p>
+        <p>Numero de serie:@ViewBag["NumeroDeSerie"] </p>
+        <p>Situacion: @ViewBag["Situacion"]</p>
+        <p>Fecha de alta @ViewBag["FechaDeAlta"]:</p>
+    </div>
+</div>
