@@ -1,22 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
+using proyectores_.Models;
 using System.Diagnostics;
 using WebApp.Models;
-
 namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index() 
+        { 
+            //uso  del modelo de modelos de la vista
 
-        {
-            //uso  de viewBag
-            ViewBag.Id = "1";
-            ViewBag.Marca = "Epson";
-            ViewBag.Modelo = "XLight";
-            ViewBag.NumeroDeSerie = "123456";
-            ViewBag.Situacion = "Bueno";
-            ViewBag.FechaDeAlta = DateTime.Now.ToString("f");
-            return View();
+            var proyector = new Proyector()
+            {
+                Id = 1,
+                Marca = "Epson",
+                Modelo = "XLight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+
+            };
+            return View(proyector);
         }
 
         public IActionResult Privacy()
