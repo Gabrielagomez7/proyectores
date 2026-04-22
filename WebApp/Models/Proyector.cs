@@ -1,4 +1,4 @@
-﻿namespace proyectores_.Models
+﻿namespace WebApp.Models
 {
     public class Proyector
     {
