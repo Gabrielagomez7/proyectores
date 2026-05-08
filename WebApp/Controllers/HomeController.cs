@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Diagnostics;
-using System.Security.Cryptography.X509Certificates;
 using WebApp.Models;
 using WebApp.Services;
 
@@ -31,8 +30,18 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult Create(Proyector proyector)
         {
-            _service.AddProyector(proyector);
-            return RedirectToAction(nameof(Index));
+            if (!ModelState.IsValid)
+
+            {
+                return View(proyector);
+            }
+            else
+            {
+
+                _service.AddProyector(proyector);
+                return RedirectToAction(nameof(Index));
+            }
+           
         }
 
         public IActionResult Privacy()
