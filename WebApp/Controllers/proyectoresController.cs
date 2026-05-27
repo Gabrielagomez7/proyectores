@@ -2,33 +2,35 @@
 
 namespace WebApp.Controllers
 {
-    public class Proyectores : Controller
+    public class ProyectoresController : Controller
     {
-        public string Index()
-        {
-            return "Aquí se mostrará la lista de proyectores registrados";
-        }
 
+        public IActionResult Index()
+        {
+            string html = "<h2>Inicio </h2>";
+            html += $"<p>Aqu&iacute se mostrar&aacute la lista de proyectores registrados</p>";
+            return Content(html, "text/html");
+        }
 
         public IActionResult Details(int id)
         {
-            string html = $"<h1>Nuevo proyector</h1>Aqu&iacute; se mostrar&aacute; la informaci&oacute; detallada del proyector con el ID: <strong>{id}</strong>";
-
-            return Content(html, "text/html");
-
+            return Content
+                (
+                "<h2>Nuevo Proyector </h2>"
+                + $"<p>Aqu&iacute se mostrar&aacute la informaci&oacuten de un proyector {id}<p>",
+                "text/html"
+                );
         }
+
 
         public IActionResult Delete(int id)
         {
-            string html = $"<h1>Dar De Baja</h1>Aquí se darmostrar&aacute; de baja el proyector <strong>#{id}</strong>";
-            return Content(html, "text/html");
-        }
-
-        public IActionResult Edit(int id)
-        {
-            string html = $"Aquí se modificará la información de un proyector específico con el ID: <strong>{id}</strong>";
-            return Content(html, "text/html");
+            return Content
+                (
+                "<h2>Dar de baja</h2>"
+                + $"<p>Se dar&aacute de baja el proyector {id}</p>",
+                "text/html"
+                );
         }
     }
 }
-   
