@@ -10,7 +10,8 @@ builder.Services.AddControllersWithViews();
 
 // Registrar tu DbContext con LocalDB
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Proyectores;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Connection"))
+    );
 
 builder.Services.AddTransient<IProyectoresServices, ProyectoresService>();
 

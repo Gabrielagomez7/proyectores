@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-﻿namespace WebApp.Validations
-{
-    public class NoRepetirIdValidatorAttribute
-    {
-    }
-}
-=======
-﻿using System.ComponentModel.DataAnnotations;
+
+using System.ComponentModel.DataAnnotations;
 using WebApp.Models;
 
 namespace WebApp.Validations
@@ -32,4 +25,4 @@ namespace WebApp.Validations
         }
     }
 }
->>>>>>> hacer-persistente-la-aplicacion-
+
