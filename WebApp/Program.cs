@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using WebApp.Controllers;
 using WebApp.Services;
 using WebApp.Data; 
 
@@ -9,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Registrar tu DbContext con LocalDB
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Connection"))
+builder.Services.AddDbContext<AppDbContext>(options =>  options.UseSqlServer(builder.Configuration.GetConnectionString("Connection"))
     );
 
 builder.Services.AddTransient<IProyectoresServices, ProyectoresService>();
