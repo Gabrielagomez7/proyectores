@@ -2,13 +2,13 @@
 
 namespace WebApp.Services
 {
-    public class ProyectoresEnMemoriaService : IProyectoresServices
+    public class ProyectoresEnMemoriaService : IProyectoresService
     {
         private static List<Proyector> _proyectores = LoadData();
 
         public void AddProyector(Proyector proyector)
         {
-           if (proyector != null)
+            if (proyector != null)
             {
                 _proyectores.Add(proyector);
             }
@@ -19,6 +19,8 @@ namespace WebApp.Services
             return _proyectores;
         }
 
+
+
         private static List<Proyector> LoadData()
         {
             var proyectores = new List<Proyector>();
@@ -28,10 +30,9 @@ namespace WebApp.Services
                 Id = 1,
                 Marca = "Epson",
                 Modelo = "XLight",
-                NumeroDeSerie = "963454",
+                NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
-
             });
 
             proyectores.Add(new Proyector()
@@ -39,21 +40,19 @@ namespace WebApp.Services
                 Id = 2,
                 Marca = "Epson",
                 Modelo = "XLight",
-                NumeroDeSerie = "122296",
+                NumeroDeSerie = "567890",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
-
             });
 
             proyectores.Add(new Proyector()
             {
                 Id = 3,
                 Marca = "Epson",
-                Modelo = "XLight",
-                NumeroDeSerie = "267456",
-                Situacion = SituacionProyector.Bueno,
+                Modelo = "Performer",
+                NumeroDeSerie = "144556",
+                Situacion = SituacionProyector.Regular,
                 FechaDeAlta = DateTime.Now
-
             });
 
             proyectores.Add(new Proyector()
@@ -61,10 +60,9 @@ namespace WebApp.Services
                 Id = 4,
                 Marca = "Epson",
                 Modelo = "XLight",
-                NumeroDeSerie = "122056",
+                NumeroDeSerie = "456789",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
-
             });
 
             proyectores.Add(new Proyector()
@@ -72,14 +70,33 @@ namespace WebApp.Services
                 Id = 5,
                 Marca = "Epson",
                 Modelo = "XLight",
-                NumeroDeSerie = "123456",
+                NumeroDeSerie = "234567",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
-
             });
+
 
             return proyectores;
         }
 
+        public Proyector? GetProyectorById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Proyector proyector)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Proyector? Delete(Proyector proyector)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

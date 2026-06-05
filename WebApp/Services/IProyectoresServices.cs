@@ -1,12 +1,16 @@
-﻿using WebApp.Models;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using WebApp.Models;
 
 namespace WebApp.Services
 {
-    public interface IProyectoresServices
+    public interface IProyectoresService
     {
         IEnumerable<Proyector> GetAll();
-
         void AddProyector(Proyector proyector);
-    }
+        Proyector? GetProyectorById(int id);
+        void Update(Proyector proyector);
+        Proyector? Delete(Proyector proyector);
 
+
+    }
 }
